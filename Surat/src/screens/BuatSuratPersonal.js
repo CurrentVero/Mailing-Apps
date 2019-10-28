@@ -12,7 +12,7 @@ export default class BuatSuratPersonal extends Component {
           <View style={styles.buttonRowRow}>
             <View style={styles.buttonRow}>
               <TouchableOpacity style={styles.button}
-              onPress={() => navigate('BuatSuratPersonal')}>
+              onPress={() => navigate('HalamanAwal')}>
                 <MaterialCommunityIconsIcon name="menu-open" style={styles.icon} />
               </TouchableOpacity>
               <Text style={styles.text3}>Buat Surat Personal</Text>
@@ -158,9 +158,9 @@ const styles = StyleSheet.create({
   buttonRowRow: {
     height: 46,
     flexDirection: "row",
-    marginLeft: 26,
+    marginLeft: 6,
     marginRight: 5,
-    backgroundColor: "#d62196"
+    backgroundColor: "#d62196",
   },
   textInput2: {
     width: 66,
@@ -171,7 +171,8 @@ const styles = StyleSheet.create({
     marginLeft: 16
   },
   buttonRowRowColumn: {
-    marginTop: 18
+    marginTop: 18,
+    alignSelf: "center"
   },
   buttonRowRowColumnFiller: {
     flex: 1
