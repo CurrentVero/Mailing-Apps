@@ -13,7 +13,7 @@ export default class BuatSuratPersonal extends Component {
             <View style={styles.buttonRow}>
               <TouchableOpacity style={styles.button}
               onPress={() => navigate('BuatSuratPersonal')}>
-                <MaterialCommunityIconsIcon name="menu" style={styles.icon} />
+                <MaterialCommunityIconsIcon name="menu-open" style={styles.icon} />
               </TouchableOpacity>
               <Text style={styles.text3}>Buat Surat Personal</Text>
             </View>
@@ -21,12 +21,12 @@ export default class BuatSuratPersonal extends Component {
             <View style={styles.rect2}>
               <TouchableOpacity style={styles.button2}>
                 <MaterialCommunityIconsIcon
-                  name="magnify"
+                  name="attachment"
                   style={styles.icon2}
                 />
               </TouchableOpacity>
               <TouchableOpacity style={styles.button3}>
-                <MaterialCommunityIconsIcon name="heart" style={styles.icon3} />
+                <MaterialCommunityIconsIcon name="send" style={styles.icon3} />
               </TouchableOpacity>
               <TouchableOpacity style={styles.button4}>
                 <MaterialCommunityIconsIcon
