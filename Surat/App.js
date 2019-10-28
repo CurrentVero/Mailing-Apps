@@ -1,10 +1,10 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
-import HalamanAwal from './src/screens/HalamanAwal';
+import MainScreen from './src/screens/MainScreen';
 import BuatSuratPersonal from './src/screens/BuatSuratPersonal';
 
 
 const router = createSwitchNavigator({
-    HalamanAwal: { screen: HalamanAwal },
+    HalamanAwal: { screen: MainScreen },
     BuatSuratPersonal: { screen: BuatSuratPersonal },
 });
 

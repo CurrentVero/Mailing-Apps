@@ -5,12 +5,14 @@ import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommun
 
 export default class BuatSuratPersonal extends Component {
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <View style={styles.buttonRowRowColumn}>
           <View style={styles.buttonRowRow}>
             <View style={styles.buttonRow}>
-              <TouchableOpacity style={styles.button}>
+              <TouchableOpacity style={styles.button}
+              onPress={() => navigate('BuatSuratPersonal')}>
                 <MaterialCommunityIconsIcon name="menu" style={styles.icon} />
               </TouchableOpacity>
               <Text style={styles.text3}>Buat Surat Personal</Text>
