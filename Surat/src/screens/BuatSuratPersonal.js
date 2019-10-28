@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: "roboto-regular",
     marginLeft: 14,
-    marginTop: 16
+    marginTop: 12
   },
   buttonRow: {
     height: 46,
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     fontSize: 24
   },
   button3: {
-    padding: 11
+    padding: 9
   },
   icon3: {
     backgroundColor: "transparent",
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     fontSize: 24
   },
   button4: {
-    padding: 11
+    padding: 9
   },
   icon4: {
     backgroundColor: "transparent",
@@ -159,7 +159,8 @@ const styles = StyleSheet.create({
     height: 46,
     flexDirection: "row",
     marginLeft: 26,
-    marginRight: 5
+    marginRight: 5,
+    backgroundColor: "#d62196"
   },
   textInput2: {
     width: 66,
