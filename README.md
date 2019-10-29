@@ -1,7 +1,7 @@
 # Mailing-Apps
 Mobile Mailing aplication with using React Native language.
 
-
+# How to Run the Project
 If you have or often use react native, please follow the steps below:
 A. For windowos user
   1. Create new folder
@@ -20,6 +20,8 @@ B. For machintos user
   5. And please type "npm install" or "yarn install"
   6. Open your emulator
   7. Type "react-native run-ios"
+  
+# Installation React Native and Run the Project  
   
  If you have just tried react native or have not installed react native, follow these steps below:
  A. For windows user
@@ -44,8 +46,26 @@ B. For machintos user
       - Variable name : ANDROID_HOME, variable value:users/user/AppData/Local/Android/Sdk (In the variable value, point to your SDK directory which you can see in the SDK Manager earlier)
    11. Create new folder
    12. Copy the folder that you downloaded and place it in a new folder that you created
-   13. Navigate cmd to the folder you just downloaded for example "F:tugas/appsurat/Surat"
+   13. Open cmd (not run as administrator) and navigate cmd to the folder you just downloaded for example "F:tugas/appsurat/Surat"
    14. And please type "npm install" or "yarn install"
    15. Open your emulator
    16. Type "react-native run-android"
+   
+ B. For Machintos user
+  1. Open terminal
+  2. Install homebrew "/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)""
+  3. Install nodejs "brew install node"
+  4. Install watchman "brew install watchman"
+  5. Install react native cli "npm install -g react-native-cli"
+  6. Install Xcode command line tools
+  7. Create new folder 
+  8. Copy the folder that you downloaded and place it in a new folder that you created
+  9. Open Terminal
+  10. Navigate terminal to the folder you just downloaded for example "user-mac:Surat"
+  11. And please type "npm install" or "yarn install"
+  12. Open your emulator
+  13. Type "react-native run-ios"
+  
+  # Enjoy Ngoding Brooo.....!!!
+  ************** if the way that I use is not successful, please open another website. Thank you...!!! **************
       
