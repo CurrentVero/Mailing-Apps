@@ -5,9 +5,10 @@ import Header from './src/components/header';
 
 
 const router = createSwitchNavigator({
-    Header : { screen: Header},
+   
     HalamanAwal: { screen: MainScreen },
     BuatSuratPersonal: { screen: BuatSuratPersonal },
+    Header : { screen: Header},
 });
 
 
