@@ -13,7 +13,7 @@ export default class MainScreen extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.button3Row}>
-
+          
           <TouchableOpacity style={styles.button3}>
             <MaterialCommunityIconsIcon name="menu-open" style={styles.MenuIcon} />
           </TouchableOpacity>
@@ -78,7 +78,7 @@ export default class MainScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   button3: {
     backgroundColor: "rgba(251,251,251,1)",
@@ -121,7 +121,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginTop: 18,
     marginLeft: 26,
-    marginRight: 6
+    marginRight: 6,
+    backgroundColor: "#d62196"
   },
   image: {
     width: 111,
