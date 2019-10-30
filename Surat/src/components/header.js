@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
     Row: {
         height: 30,
         width: 30,
-        backgroundColor: "#121212",
-        padding: 11
+        backgroundColor: "#121212"
+       
     }
   });
   
