@@ -6,7 +6,7 @@ import { TextField, FilledTextField, OutlinedTextField, } from 'react-native-mat
 
 
 
-export default class BuatSuratPersonal extends Component {
+export default class Header1 extends Component {
 
   constructor(props) {
     super(props);
@@ -26,12 +26,18 @@ export default class BuatSuratPersonal extends Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
 
+        
+
       <View style={styles.container}>
-        <View style={styles.buttonRowRow}>
+        <View style={styles.header}>
+
+       
           <View style={styles.buttonRow}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button}
+            onPress={() => navigate('HalamanAwal')}>
               <MaterialCommunityIconsIcon name="menu-open" style={styles.icon} />
             </TouchableOpacity>
             <Text style={styles.text3}>Buat Surat Personal</Text>
@@ -61,21 +67,7 @@ export default class BuatSuratPersonal extends Component {
           <View>
             <View>
               <TextField
-                label='Dari'
-                keyboardType='phone-pad'
-                formatText={this.formatText}
-                onSubmitEditing={this.onSubmit}
-                ref={this.fieldRef}
-              />
-            </View>
-          </View>
-
-
-
-          <View>
-            <View>
-              <TextField
-                label='Kepada'
+                label='Kepada: Pejabat'
                 keyboardType='email-address'
                 formatText={this.formatText}
                 onSubmitEditing={this.onSubmit}
@@ -89,8 +81,22 @@ export default class BuatSuratPersonal extends Component {
           <View>
             <View>
               <TextField
-                label='Subject'
-                keyboardType='phone-pad'
+                label='Kepada: Pegawai (dosen / staff)'
+                keyboardType='email-address'
+                formatText={this.formatText}
+                onSubmitEditing={this.onSubmit}
+                ref={this.fieldRef}
+              />
+            </View>
+          </View>
+
+
+
+          <View>
+            <View>
+              <TextField
+                label='Kepada: Mahasiswa'
+                keyboardType= "email-address"
                 formatText={this.formatText}
                 onSubmitEditing={this.onSubmit}
                 ref={this.fieldRef}
@@ -100,23 +106,21 @@ export default class BuatSuratPersonal extends Component {
 
 
           <TextField
-            label='Tulis Pesan'
-            maxLength={4}
-            numberOfLines={60}
+            label='Perihal'
+            keyboardType='default'
+            formatText={this.formatText}
             onSubmitEditing={this.onSubmit}
             ref={this.fieldRef}
           />
 
-          <View style={{ padding: 10 }}>
+          <View style={{ marginTop: 10}}>
             <TextInput
-              style={{ height: 40 }}
-              placeholder="Type here to translate!"
-              onChangeText={(text) => this.setState({ text })}
-              value={this.state.text}
+              placeholder="Isi Surat"
+              formatText={this.formatText}
+              onSubmitEditing={this.onSubmit}
+              ref={this.fieldRef}
             />
-            <Text style={{ padding: 10, fontSize: 42 }}>
-              {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
-            </Text>
+            
           </View>
 
         </View>
@@ -128,10 +132,12 @@ export default class BuatSuratPersonal extends Component {
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1
   },
   button: {
+    marginLeft: 7,
     padding: 11
   },
   icon: {
@@ -144,7 +150,7 @@ const styles = StyleSheet.create({
     color: "rgba(7,7,7,1)",
     fontSize: 15,
     fontFamily: "roboto-regular",
-    marginLeft: 14,
+    marginLeft: 34,
     marginTop: 12
   },
   buttonRow: {
@@ -169,7 +175,7 @@ const styles = StyleSheet.create({
     fontSize: 24
   },
   button3: {
-    padding: 9
+    padding: 7
   },
   icon3: {
     backgroundColor: "transparent",
@@ -178,6 +184,7 @@ const styles = StyleSheet.create({
     fontSize: 24
   },
   button4: {
+    marginRight: 7,
     padding: 9
   },
   icon4: {
@@ -186,12 +193,18 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto",
     fontSize: 24
   },
-  buttonRowRow: {
-    height: 46,
+  header: {
+    height: 60,
     flexDirection: "row",
-    marginLeft: 6,
-    marginRight: 5,
-    backgroundColor: "#d62196",
+    backgroundColor: "#fff",
+    alignItems: 'center',
+    justifyContent: 'center',  
+    elevation: 4,  
+    shadowOffset: {height: 2, width: -2},
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 1.5,
+    overflow: "hidden"
   },
   textInput2: {
     width: 66,
@@ -202,7 +215,7 @@ const styles = StyleSheet.create({
     marginLeft: 16
   },
   buttonRowRowColumn: {
-    marginTop: 18,
+ 
     width: 400,
     alignSelf: "center"
   },

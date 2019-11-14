@@ -3,36 +3,38 @@ import { StyleSheet, View, TouchableOpacity, Image, Text, } from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
 
-
-
-
-
 export default class MainScreen extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <View style={styles.button3Row}>
-          
-          <TouchableOpacity style={styles.button3}>
-            <MaterialCommunityIconsIcon name="menu-open" style={styles.MenuIcon} />
-          </TouchableOpacity>
-          <View style={styles.button3Filler} />
-          
-            <TouchableOpacity style={styles.button}>
-              <MaterialCommunityIconsIcon
-                name="refresh"
-                style={styles.ReloadIcon}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button2}>
-              <MaterialCommunityIconsIcon
-                name="dots-vertical"
-                style={styles.TitiktigaIcon}
-              />
-            </TouchableOpacity>
-         
-        </View>
+        <View style={styles.header}>
+
+       
+<View style={styles.buttonRow}>
+  <TouchableOpacity style={styles.button}
+  onPress={() => navigate('HalamanAwal')}>
+    <MaterialCommunityIconsIcon name="menu-open" style={styles.icon} />
+  </TouchableOpacity>
+ 
+</View>
+<View style={styles.buttonRowFiller} />
+<View style={styles.rect2}>
+  
+  <TouchableOpacity style={styles.button3}>
+    <MaterialCommunityIconsIcon name="refresh" style={styles.icon3} />
+  </TouchableOpacity>
+  <TouchableOpacity style={styles.button4}>
+    <MaterialCommunityIconsIcon
+      name="dots-vertical"
+      style={styles.icon4}
+    />
+  </TouchableOpacity>
+</View>
+</View>
+
+
+
         <Image
           source={require("../assets/images/iqbal.png")}
           resizeMode="contain"
@@ -49,13 +51,7 @@ export default class MainScreen extends Component {
           </View>
         </View>
         <Text style={styles.SuratKeluar}>Surat Keluar</Text>
-        <View style={styles.SuratPersonal2}>
-          <View style={[styles.MaterialCard, this.props.style]}>
-              <TouchableOpacity>
-                <Text style={styles.textMaterial}>Surat Personal</Text>
-              </TouchableOpacity>
-          </View>
-        </View>
+        
         <View style={styles.BuatSuratPersonal} >
           <View style={[styles.MaterialCard, this.props.style]}>
               <TouchableOpacity> 
@@ -90,6 +86,11 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto",
     fontSize: 24
   },
+ 
+  buttonRowFiller: {
+    flex: 1,
+    flexDirection: "row"
+  },
   button3Filler: {
     flex: 1,
     flexDirection: "row"
@@ -99,9 +100,17 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   button: {
+    marginLeft: 7,
     padding: 11
   },
-  ReloadIcon: {
+  icon3: {
+    backgroundColor: "transparent",
+    color: "rgba(0,0,0,1)",
+    fontFamily: "Roboto",
+    fontSize: 24
+  },
+ 
+  icon: {
     backgroundColor: "transparent",
     color: "rgba(0,0,0,1)",
     fontFamily: "Roboto",
@@ -110,24 +119,57 @@ const styles = StyleSheet.create({
   button2: {
     padding: 11
   },
+  button3: {
+    padding: 7
+  },
+  button4: {
+    marginRight: 7,
+    padding: 9
+  },
+  icon4: {
+    backgroundColor: "transparent",
+    color: "rgba(0,0,0,1)",
+    fontFamily: "Roboto",
+    fontSize: 24
+  },
+  rect2: {
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  ReloadIcon: {
+    backgroundColor: "transparent",
+    color: "rgba(0,0,0,1)",
+    fontFamily: "Roboto",
+    fontSize: 24
+  },
+  
   TitiktigaIcon: {
     backgroundColor: "transparent",
     color: "rgba(0,0,0,1)",
     fontFamily: "Roboto",
     fontSize: 24
   },
-  button3Row: {
+  buttonRow: {
     height: 46,
+    flexDirection: "row"
+  },
+  header: {
+    height: 60,
     flexDirection: "row",
-    marginTop: 18,
-    marginLeft: 26,
-    marginRight: 6,
-    backgroundColor: "#d62196"
+    backgroundColor: "#fff",
+    alignItems: 'center',
+    justifyContent: 'center',  
+    elevation: 4,  
+    shadowOffset: {height: 2, width: -2},
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 1.5,
+    overflow: "hidden"
   },
   image: {
     width: 111,
     height: 111,
-    marginTop: 12,
+    marginTop: 32,
     alignSelf: "center"
   },
   Username: {
@@ -151,7 +193,7 @@ const styles = StyleSheet.create({
     color: "#121212",
     fontSize: 14,
     fontFamily: "ubuntu-700",
-    marginTop: 34,
+    marginTop: 5  4,
     alignSelf: "center"
   },
   SuratPersonal: {
