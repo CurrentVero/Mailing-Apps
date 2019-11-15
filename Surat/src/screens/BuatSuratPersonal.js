@@ -1,106 +1,143 @@
 import React, { Component } from "react";
-import {StyleSheet, View, TouchableOpacity, Text, TextInput} from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text, TextInput, Header} from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import { TextField, FilledTextField, OutlinedTextField, } from 'react-native-material-textfield';
+
+
 
 
 export default class BuatSuratPersonal extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { text: '' };
+  }
+
+  fieldRef = React.createRef();
+
+  onSubmit = () => {
+    let { current: field } = this.fieldRef;
+
+    console.log(field.value());
+  };
+
+  formatText = (text) => {
+    return text.replace(/[^+\w]/g, '');
+  };
+
   render() {
     const { navigate } = this.props.navigation;
     return (
+
+        
+
       <View style={styles.container}>
-        <View style={styles.buttonRowRowColumn}>
-          <View style={styles.buttonRowRow}>
-            <View style={styles.buttonRow}>
-              <TouchableOpacity style={styles.button}
-              onPress={() => navigate('HalamanAwal')}>
-                <MaterialCommunityIconsIcon name="menu-open" style={styles.icon} />
-              </TouchableOpacity>
-              <Text style={styles.text3}>Buat Surat Personal</Text>
-            </View>
-            <View style={styles.buttonRowFiller} />
-            <View style={styles.rect2}>
-              <TouchableOpacity style={styles.button2}>
-                <MaterialCommunityIconsIcon
-                  name="attachment"
-                  style={styles.icon2}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.button3}>
-                <MaterialCommunityIconsIcon name="send" style={styles.icon3} />
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.button4}>
-                <MaterialCommunityIconsIcon
-                  name="dots-vertical"
-                  style={styles.icon4}
-                />
-              </TouchableOpacity>
-            </View>
+        <View style={styles.header}>
+
+       
+          <View style={styles.buttonRow}>
+            <TouchableOpacity style={styles.button}
+            onPress={() => navigate('HalamanAwal')}>
+              <MaterialCommunityIconsIcon name="menu-open" style={styles.icon} />
+            </TouchableOpacity>
+            <Text style={styles.text3}>Buat Surat Personal</Text>
           </View>
-
-
-
-          <View style={[styles.material, this.props.style]}>
-              <View style={styles.textRow} >
-                <Text style={styles.text}>Dari</Text>
-            <TextInput
-             placeholder="youremail@gmail.com"
-              maxLength={40}
-              selectTextOnFocus={false}
-              style={styles.textInput}
+          <View style={styles.buttonRowFiller} />
+          <View style={styles.rect2}>
+            <TouchableOpacity style={styles.button2}>
+              <MaterialCommunityIconsIcon
+                name="attachment"
+                style={styles.icon2}
               />
-            </View>
-          </View>
-
-
-
-          <View style={[styles.material, this.props.style]}>
-              <View style={styles.textRow}>
-                <Text style={styles.text}>Kepada</Text>
-            <TextInput
-             placeholder="senderemail@gmail.com"
-              maxLength={40}
-              selectTextOnFocus={false}
-              style={styles.textInput}
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button3}>
+              <MaterialCommunityIconsIcon name="send" style={styles.icon3} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button4}>
+              <MaterialCommunityIconsIcon
+                name="dots-vertical"
+                style={styles.icon4}
               />
-            </View>
+            </TouchableOpacity>
           </View>
-
-
-
-          <View style={[styles.material, this.props.style]}>
-              <View style={styles.textRow}>
-                <TextInput
-                  placeholder="Subjeck"
-                  maxLength={90}
-                  selectTextOnFocus={false}
-                  style={styles.textInputAA}
-              />
-            </View>
-          </View>
-
-
-          <TextInput
-            placeholder="Tulis Surat"
-            placeholderTextColor="rgba(155,155,155,1)"
-            maxLength={200}
-            numberOfLines={60}
-            clearTextOnFocus={true}
-            dataDetector="all"
-            style={styles.textInput2}
-          />
         </View>
-        <View style={styles.buttonRowRowColumnFiller} />
-        <View style={styles.rect3} />
+
+
+        <View style={styles.buttonRowRowColumn}>
+          <View>
+            <View>
+              <TextField
+                label='Kepada: Pejabat'
+                keyboardType='email-address'
+                formatText={this.formatText}
+                onSubmitEditing={this.onSubmit}
+                ref={this.fieldRef}
+              />
+            </View>
+          </View>
+
+
+
+          <View>
+            <View>
+              <TextField
+                label='Kepada: Pegawai (dosen / staff)'
+                keyboardType='email-address'
+                formatText={this.formatText}
+                onSubmitEditing={this.onSubmit}
+                ref={this.fieldRef}
+              />
+            </View>
+          </View>
+
+
+
+          <View>
+            <View>
+              <TextField
+                label='Kepada: Mahasiswa'
+                keyboardType= "email-address"
+                formatText={this.formatText}
+                onSubmitEditing={this.onSubmit}
+                ref={this.fieldRef}
+              />
+            </View>
+          </View>
+
+
+          <TextField
+            label='Perihal'
+            keyboardType='default'
+            formatText={this.formatText}
+            onSubmitEditing={this.onSubmit}
+            ref={this.fieldRef}
+          />
+
+          <View style={{ marginTop: 10}}>
+            <TextInput
+              placeholder="Isi Surat"
+              formatText={this.formatText}
+              onSubmitEditing={this.onSubmit}
+              ref={this.fieldRef}
+            />
+            
+          </View>
+
+        </View>
       </View>
+
+
     );
   }
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1
   },
   button: {
+    marginLeft: 7,
     padding: 11
   },
   icon: {
@@ -113,7 +150,7 @@ const styles = StyleSheet.create({
     color: "rgba(7,7,7,1)",
     fontSize: 15,
     fontFamily: "roboto-regular",
-    marginLeft: 14,
+    marginLeft: 34,
     marginTop: 12
   },
   buttonRow: {
@@ -138,7 +175,7 @@ const styles = StyleSheet.create({
     fontSize: 24
   },
   button3: {
-    padding: 9
+    padding: 7
   },
   icon3: {
     backgroundColor: "transparent",
@@ -147,6 +184,7 @@ const styles = StyleSheet.create({
     fontSize: 24
   },
   button4: {
+    marginRight: 7,
     padding: 9
   },
   icon4: {
@@ -155,12 +193,18 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto",
     fontSize: 24
   },
-  buttonRowRow: {
-    height: 46,
+  header: {
+    height: 60,
     flexDirection: "row",
-    marginLeft: 6,
-    marginRight: 5,
-    backgroundColor: "#d62196",
+    backgroundColor: "#fff",
+    alignItems: 'center',
+    justifyContent: 'center',  
+    elevation: 4,  
+    shadowOffset: {height: 2, width: -2},
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 1.5,
+    overflow: "hidden"
   },
   textInput2: {
     width: 66,
@@ -171,7 +215,8 @@ const styles = StyleSheet.create({
     marginLeft: 16
   },
   buttonRowRowColumn: {
-    marginTop: 18,
+ 
+    width: 400,
     alignSelf: "center"
   },
   buttonRowRowColumnFiller: {

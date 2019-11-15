@@ -63,7 +63,7 @@ export default class MainScreen extends Component {
         <View style={styles.ArsipSuratPersonal}>
           <View style={[styles.MaterialCard, this.props.style]}>
               <TouchableOpacity>
-                <Text style={styles.textMaterial}>Arsip Surat Personal</Text>
+                <Text style={styles.textMaterial}>Arsip Surat Keluar</Text>
               </TouchableOpacity>
           </View>
         </View>
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     color: "#121212",
     fontSize: 14,
     fontFamily: "ubuntu-700",
-    marginTop: 5  4,
+    marginTop: 54,
     alignSelf: "center"
   },
   SuratPersonal: {
