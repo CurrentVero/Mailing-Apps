@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Image, Text, } from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import { DrawerActions } from 'react-navigation-drawer';
+
 
 
 export default class MainScreen extends Component {
@@ -11,27 +13,27 @@ export default class MainScreen extends Component {
         <View style={styles.header}>
 
        
-<View style={styles.buttonRow}>
-  <TouchableOpacity style={styles.button}
-  onPress={() => navigate('HalamanAwal')}>
-    <MaterialCommunityIconsIcon name="menu-open" style={styles.icon} />
-  </TouchableOpacity>
+          <View style={styles.buttonRow}>
+            <TouchableOpacity style={styles.button}
+              onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer())}>
+              <MaterialCommunityIconsIcon name="menu-open" style={styles.icon} />
+            </TouchableOpacity>
  
-</View>
-<View style={styles.buttonRowFiller} />
-<View style={styles.rect2}>
+          </View>
+          <View style={styles.buttonRowFiller} />
+          <View style={styles.rect2}>
   
-  <TouchableOpacity style={styles.button3}>
-    <MaterialCommunityIconsIcon name="refresh" style={styles.icon3} />
-  </TouchableOpacity>
-  <TouchableOpacity style={styles.button4}>
-    <MaterialCommunityIconsIcon
-      name="dots-vertical"
-      style={styles.icon4}
-    />
-  </TouchableOpacity>
-</View>
-</View>
+            <TouchableOpacity style={styles.button3}>
+              <MaterialCommunityIconsIcon name="refresh" style={styles.icon3} />
+            </TouchableOpacity>
+            <View style={styles.button4}>
+              <MaterialCommunityIconsIcon
+                name="dots-vertical"
+                style={styles.icon4}
+              />
+            </View>
+          </View>
+        </View>
 
 
 

@@ -37,7 +37,7 @@ export default class BuatSuratPersonal extends Component {
        
           <View style={styles.buttonRow}>
             <TouchableOpacity style={styles.button}
-            onPress={() => navigate('HalamanAwal')}>
+            onPress={() => this.props.navigation.goBack()}>
               <MaterialCommunityIconsIcon name="menu-open" style={styles.icon} />
             </TouchableOpacity>
             <Text style={styles.text3}>Buat Surat Personal</Text>
@@ -72,6 +72,8 @@ export default class BuatSuratPersonal extends Component {
                 formatText={this.formatText}
                 onSubmitEditing={this.onSubmit}
                 ref={this.fieldRef}
+                maxLength={20}
+                multiline
               />
             </View>
           </View>
@@ -86,6 +88,8 @@ export default class BuatSuratPersonal extends Component {
                 formatText={this.formatText}
                 onSubmitEditing={this.onSubmit}
                 ref={this.fieldRef}
+                maxLength={20}
+                multiline
               />
             </View>
           </View>
@@ -100,6 +104,8 @@ export default class BuatSuratPersonal extends Component {
                 formatText={this.formatText}
                 onSubmitEditing={this.onSubmit}
                 ref={this.fieldRef}
+                maxLength={20}
+                multiline
               />
             </View>
           </View>
@@ -111,6 +117,8 @@ export default class BuatSuratPersonal extends Component {
             formatText={this.formatText}
             onSubmitEditing={this.onSubmit}
             ref={this.fieldRef}
+            maxLength={40}
+            multiline
           />
 
           <View style={{ marginTop: 10}}>
@@ -119,6 +127,8 @@ export default class BuatSuratPersonal extends Component {
               formatText={this.formatText}
               onSubmitEditing={this.onSubmit}
               ref={this.fieldRef}
+              maxLength={400}
+              multiline
             />
             
           </View>

@@ -1,23 +1,22 @@
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
-import { Dimensions } from 'react-native';
-import MainScreen from './src/screens/MainScreen';
-import BuatSuratPersonal from './src/screens/BuatSuratPersonal';
-import Header from './src/components/header';
+import React, {Component} from 'react';
+import { createAppContainer} from 'react-navigation';
+import { createDrawerNavigator} from 'react-navigation-drawer';
+import router from "./src/components/router";
 
 
-const router = createSwitchNavigator({
-   
-    HalamanAwal: { 
-        screen: MainScreen },
-
-    BuatSuratPersonal: { 
-        screen: BuatSuratPersonal },
-
-    Header : { 
-        screen: Header},
-        
+const MyDrawerNavigator = createDrawerNavigator({
+    Home: {screen: router},
+},
+{
+    initialRouteName: 'Home',
+    drawerWidth: 300,
+    drawerPosition:'left',
 });
 
+const AppContainer = createAppContainer(MyDrawerNavigator);
 
-
-export default createAppContainer(router)
+export default class App extends Component{
+    render(){
+        return <AppContainer />;
+    }
+}
