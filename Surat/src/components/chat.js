@@ -5,7 +5,7 @@ import { DrawerActions } from 'react-navigation-drawer';
 
 
 
-export default class MainScreen extends Component {
+export default class Chat extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
@@ -18,6 +18,7 @@ export default class MainScreen extends Component {
               onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer())}>
               <MaterialCommunityIconsIcon name="menu-open" style={styles.icon} />
             </TouchableOpacity>
+            <Text style={styles.text3}>Chatting</Text>
  
           </View>
           <View style={styles.buttonRowFiller} />
@@ -34,44 +35,13 @@ export default class MainScreen extends Component {
             </View>
           </View>
         </View>
-
-
-
         <Image
-          source={require("../assets/images/iqbal.png")}
+          source={require("../assets/images/teepublic6.png")}
           resizeMode="contain"
           style={styles.image}
         />
-        <Text style={styles.Username}>Current Vero</Text>
-        <Text style={styles.NIM}>17106050048</Text>
-        <Text style={styles.SuratMasuk}>Surat Masuk</Text>
-        <View style={styles.SuratPersonal}>
-          <View style={[styles.MaterialCard, this.props.style]}>
-              <TouchableOpacity>
-                <Text style={styles.textMaterial}
-                 onPress={() => navigate('SuratMasuk')}>Surat Masuk</Text>
-              </TouchableOpacity>
-          </View>
-        </View>
-        <Text style={styles.SuratKeluar}>Surat Keluar</Text>
-        
-        <View style={styles.BuatSuratPersonal} >
-          <View style={[styles.MaterialCard, this.props.style]}>
-              <TouchableOpacity> 
-                <Text style={styles.textMaterial}
-                 onPress={() => navigate('TulisSurat')}>Tulis Surat</Text>
-              </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.ArsipSuratPersonal}>
-          <View style={[styles.MaterialCard, this.props.style]}>
-              <TouchableOpacity>
-                <Text style={styles.textMaterial}
-                onPress={() => navigate('SuratKeluar')}>Surat Keluar</Text>
-              </TouchableOpacity>
-          </View>
-        </View>
-      </View>
+        <Text style={styles.text}>Coming Soon</Text>
+    </View>
     );
   }
 }
@@ -171,89 +141,23 @@ const styles = StyleSheet.create({
     overflow: "hidden"
   },
   image: {
-    width: 111,
-    height: 111,
-    marginTop: 32,
-    alignSelf: "center"
+    width: 311,
+    height: 311,
+    alignSelf: "center",    
   },
-  Username: {
+  text: {
     color: "#121212",
     fontSize: 20,
     fontFamily: "ubuntu-700",
     marginTop: 16,
     alignSelf: "center"
   },
-  NIM: {
-    width: 169,
-    height: 14,
-    color: "#121212",
-    fontSize: 14,
-    fontFamily: "ubuntu-regular",
-    textAlign: "center",
-    marginTop: 2,
-    alignSelf: "center"
-  },
-  SuratMasuk: {
-    color: "#121212",
-    fontSize: 14,
-    fontFamily: "ubuntu-700",
-    marginTop: 54,
-    alignSelf: "center"
-  },
-  SuratPersonal: {
-    width: 359,
-    height: 46,
-    marginTop: 19,
-    alignSelf: "center"
-  },
-  SuratKeluar: {
-    color: "rgba(0,0,0,0.87)",
-    fontSize: 14,
-    fontFamily: "ubuntu-700",
-    marginTop: 26,
-    alignSelf: "center"
-  },
-  SuratPersonal2: {
-    width: 359,
-    height: 46,
-    marginTop: 23,
-    alignSelf: "center"
-  },
-  BuatSuratPersonal: {
-    width: 359,
-    height: 46,
-    marginTop: 18,
-    alignSelf: "center"
-  },
-  ArsipSuratPersonal: {
-    width: 359,
-    height: 46,
-    marginTop: 18,
-    alignSelf: "center"
-  },
-  MaterialCard: {
-    backgroundColor: "#FFF",
-    flexWrap: "nowrap",
-    elevation: 3,
-    borderRadius: 8,
-    borderColor: "#CCC",
-    borderWidth: 1,
-    shadowOffset: {
-      height: 2,
-      width: -2
-    },
-    shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowRadius: 1.5,
-    overflow: "hidden"
-  },
-  textMaterial: {
-    height: 32,
-    color: "#121212",
-    fontSize: 14,
-    fontFamily: "ubuntu-700",
-    marginTop: 14,
-    marginLeft: 19
+  text3: {
+    color: "rgba(7,7,7,1)",
+    fontSize: 18,
+    fontFamily: "roboto-regular",
+    marginLeft: 34,
+    marginTop: 12,
   },
 });
 

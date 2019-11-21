@@ -6,7 +6,7 @@ import { TextField, FilledTextField, OutlinedTextField, } from 'react-native-mat
 
 
 
-export default class BuatSuratPersonal extends Component {
+export default class TulisSurat extends Component {
 
   constructor(props) {
     super(props);
@@ -27,9 +27,7 @@ export default class BuatSuratPersonal extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
-    return (
-
-        
+    return (        
 
       <View style={styles.container}>
         <View style={styles.header}>
@@ -37,10 +35,10 @@ export default class BuatSuratPersonal extends Component {
        
           <View style={styles.buttonRow}>
             <TouchableOpacity style={styles.button}
-            onPress={() => this.props.navigation.goBack()}>
-              <MaterialCommunityIconsIcon name="menu-open" style={styles.icon} />
+            onPress={() => navigate('HalamanAwal')}>
+              <MaterialCommunityIconsIcon name="chevron-double-left" style={styles.icon} />
             </TouchableOpacity>
-            <Text style={styles.text3}>Buat Surat Personal</Text>
+            <Text style={styles.text3}>Tulis Surat</Text>
           </View>
           <View style={styles.buttonRowFiller} />
           <View style={styles.rect2}>
@@ -154,11 +152,11 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     color: "rgba(0,0,0,1)",
     fontFamily: "Roboto",
-    fontSize: 24
+    fontSize: 26
   },
   text3: {
     color: "rgba(7,7,7,1)",
-    fontSize: 15,
+    fontSize: 18,
     fontFamily: "roboto-regular",
     marginLeft: 34,
     marginTop: 12

@@ -5,7 +5,7 @@ import { DrawerActions } from 'react-navigation-drawer';
 
 
 
-export default class MainScreen extends Component {
+export default class SuratKeluar extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
@@ -15,16 +15,17 @@ export default class MainScreen extends Component {
        
           <View style={styles.buttonRow}>
             <TouchableOpacity style={styles.button}
-              onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer())}>
-              <MaterialCommunityIconsIcon name="menu-open" style={styles.icon} />
+              onPress={() => navigate('HalamanAwal')}>
+              <MaterialCommunityIconsIcon name="chevron-double-left" style={styles.icon} />
             </TouchableOpacity>
+            <Text style={styles.textHeader}>Surat Keluar</Text>
  
           </View>
           <View style={styles.buttonRowFiller} />
           <View style={styles.rect2}>
   
             <TouchableOpacity style={styles.button3}>
-              <MaterialCommunityIconsIcon name="refresh" style={styles.icon3} />
+              <MaterialCommunityIconsIcon name="delete-empty" style={styles.icon3} />
             </TouchableOpacity>
             <View style={styles.button4}>
               <MaterialCommunityIconsIcon
@@ -34,44 +35,40 @@ export default class MainScreen extends Component {
             </View>
           </View>
         </View>
-
-
-
-        <Image
-          source={require("../assets/images/iqbal.png")}
-          resizeMode="contain"
-          style={styles.image}
-        />
-        <Text style={styles.Username}>Current Vero</Text>
-        <Text style={styles.NIM}>17106050048</Text>
-        <Text style={styles.SuratMasuk}>Surat Masuk</Text>
-        <View style={styles.SuratPersonal}>
-          <View style={[styles.MaterialCard, this.props.style]}>
-              <TouchableOpacity>
-                <Text style={styles.textMaterial}
-                 onPress={() => navigate('SuratMasuk')}>Surat Masuk</Text>
-              </TouchableOpacity>
-          </View>
+        <View style={styles.card}>
+            <View style={styles.cardBody}>
+                <View style={styles.bodyContent}>
+                    <Text style={styles.titleStyle}>Google Admob</Text>
+                    <Text style={styles.subjectStyle}>Kode Penayangan Iklan</Text>
+                    <Text style={styles.subtitleStyle}>Lorem Ipsum has been the industry's 
+                    standard dummy text ever since the 1500s, when an unknown printer...</Text>
+                    <Text style={styles.dateStyle}>21 Oktober</Text>
+                </View>
+            </View>
         </View>
-        <Text style={styles.SuratKeluar}>Surat Keluar</Text>
-        
-        <View style={styles.BuatSuratPersonal} >
-          <View style={[styles.MaterialCard, this.props.style]}>
-              <TouchableOpacity> 
-                <Text style={styles.textMaterial}
-                 onPress={() => navigate('TulisSurat')}>Tulis Surat</Text>
-              </TouchableOpacity>
-          </View>
+        <View style={styles.card}>
+            <View style={styles.cardBody}>
+                <View style={styles.bodyContent}>
+                    <Text style={styles.titleStyle}>99 Designs</Text>
+                    <Text style={styles.subjectStyle}>Request Payout</Text>
+                    <Text style={styles.subtitleStyle}>Lorem Ipsum has been the industry's 
+                    standard dummy text ever since the 1500s, when an unknown printer...</Text>
+                    <Text style={styles.dateStyle}>16 Oktober</Text>
+                </View>
+            </View>
         </View>
-        <View style={styles.ArsipSuratPersonal}>
-          <View style={[styles.MaterialCard, this.props.style]}>
-              <TouchableOpacity>
-                <Text style={styles.textMaterial}
-                onPress={() => navigate('SuratKeluar')}>Surat Keluar</Text>
-              </TouchableOpacity>
-          </View>
+        <View style={styles.card}>
+            <View style={styles.cardBody}>
+                <View style={styles.bodyContent}>
+                    <Text style={styles.titleStyle}>Teepublic</Text>
+                    <Text style={styles.subjectStyle}>You made a sell</Text>
+                    <Text style={styles.subtitleStyle}>Lorem Ipsum has been the industry's 
+                    standard dummy text ever since the 1500s, when an unknown printer...</Text>
+                    <Text style={styles.dateStyle}>3 Oktober</Text>
+                </View>
+            </View>
         </View>
-      </View>
+    </View>
     );
   }
 }
@@ -170,90 +167,66 @@ const styles = StyleSheet.create({
     shadowRadius: 1.5,
     overflow: "hidden"
   },
-  image: {
-    width: 111,
-    height: 111,
-    marginTop: 32,
-    alignSelf: "center"
+  textHeader: {
+    color: "rgba(7,7,7,1)",
+    fontSize: 18,
+    fontFamily: "roboto-regular",
+    marginLeft: 34,
+    marginTop: 12,
   },
-  Username: {
-    color: "#121212",
-    fontSize: 20,
-    fontFamily: "ubuntu-700",
-    marginTop: 16,
-    alignSelf: "center"
-  },
-  NIM: {
-    width: 169,
-    height: 14,
-    color: "#121212",
-    fontSize: 14,
-    fontFamily: "ubuntu-regular",
-    textAlign: "center",
-    marginTop: 2,
-    alignSelf: "center"
-  },
-  SuratMasuk: {
-    color: "#121212",
-    fontSize: 14,
-    fontFamily: "ubuntu-700",
-    marginTop: 54,
-    alignSelf: "center"
-  },
-  SuratPersonal: {
-    width: 359,
-    height: 46,
-    marginTop: 19,
-    alignSelf: "center"
-  },
-  SuratKeluar: {
-    color: "rgba(0,0,0,0.87)",
-    fontSize: 14,
-    fontFamily: "ubuntu-700",
-    marginTop: 26,
-    alignSelf: "center"
-  },
-  SuratPersonal2: {
-    width: 359,
-    height: 46,
-    marginTop: 23,
-    alignSelf: "center"
-  },
-  BuatSuratPersonal: {
-    width: 359,
-    height: 46,
-    marginTop: 18,
-    alignSelf: "center"
-  },
-  ArsipSuratPersonal: {
-    width: 359,
-    height: 46,
-    marginTop: 18,
-    alignSelf: "center"
-  },
-  MaterialCard: {
+  card: {
     backgroundColor: "#FFF",
+    marginTop: 16,
+    alignSelf: 'center',
+    width: 390,
     flexWrap: "nowrap",
     elevation: 3,
-    borderRadius: 8,
+    borderRadius: 14,
     borderColor: "#CCC",
     borderWidth: 1,
     shadowOffset: {
-      height: 2,
-      width: -2
+      height: 5,
+      width: 5
     },
     shadowColor: "#000",
     shadowOpacity: 0.1,
     shadowRadius: 1.5,
     overflow: "hidden"
   },
-  textMaterial: {
-    height: 32,
-    color: "#121212",
+  cardBody: {
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
+  bodyContent: {
+    flex: 1,
+    padding: 12,
+    paddingLeft: 16,
+  },
+  titleStyle: {
+    color: "#000",
+    paddingBottom: 3,
+    fontSize: 22,
+    fontFamily: "roboto-regular"
+  },
+  subjectStyle: {
+    color: "#000",
+    paddingBottom: 12,
+    fontSize: 16,
+    fontFamily: "roboto-regular"
+  },
+  subtitleStyle: {
+    color: "#000",
+    opacity: 0.5,
     fontSize: 14,
-    fontFamily: "ubuntu-700",
-    marginTop: 14,
-    marginLeft: 19
+    fontFamily: "roboto-regular",
+    lineHeight: 16,
+    paddingBottom: 12,
+  },
+  dateStyle: {
+    color: "#000",
+    paddingBottom: 10,
+    fontSize: 12,
+    fontFamily: "roboto-regular"
   },
 });
 
