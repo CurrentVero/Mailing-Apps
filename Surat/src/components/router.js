@@ -2,12 +2,13 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { Dimensions } from 'react-native';
 import MainScreen from '../screens/MainScreen';
 import TulisSurat from '../screens/TulisSurat';
-import Header from '../components/header';
+import Login from '../components/Login';
 import SuratMasuk from '../screens/SuratMasuk';
 import SuratKeluar from '../screens/SuratKeluar';
 
 
 const router = createSwitchNavigator({
+    Login : {screen: Login},
    
     HalamanAwal: {screen: MainScreen },
 
@@ -17,7 +18,6 @@ const router = createSwitchNavigator({
 
     SuratKeluar: {screen: SuratKeluar},
 
-    Header : {screen: Header},
         
 });
 
