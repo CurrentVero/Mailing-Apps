@@ -5,7 +5,7 @@ import { DrawerActions } from 'react-navigation-drawer';
 
 
 
-export default class Learing extends Component {
+export default class Learing extends Component { 
   render() {
     const { navigate } = this.props.navigation;
     return (

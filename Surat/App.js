@@ -4,9 +4,10 @@ import { createDrawerNavigator, DrawerItems} from 'react-navigation-drawer';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import router from "./src/components/router";
 import learning from "./src/components/learning";
-import header from "./src/components/header";
+import login from "./src/components/Login";
 import presensi from "./src/components/presensi";
 import chat from "./src/components/chat";
+
 
 import {Container, Content, Header, Body, Icon} from 'native-base';
 
@@ -35,7 +36,7 @@ const MyDrawerNavigator = createDrawerNavigator({
     Presensi: {screen:presensi},
     Surat: {screen: router},
     Chat: {screen: chat},
-    Logout: {screen: header},
+    Logout: {screen: login},
 
 },
 {

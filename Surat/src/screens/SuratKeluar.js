@@ -25,7 +25,8 @@ export default class SuratKeluar extends Component {
           <View style={styles.rect2}>
   
             <TouchableOpacity style={styles.button3}>
-              <MaterialCommunityIconsIcon name="delete-empty" style={styles.icon3} />
+              <MaterialCommunityIconsIcon name="border-color" style={styles.icon3} 
+              onPress={() => navigate('TulisSurat')}/>
             </TouchableOpacity>
             <View style={styles.button4}>
               <MaterialCommunityIconsIcon
@@ -35,7 +36,8 @@ export default class SuratKeluar extends Component {
             </View>
           </View>
         </View>
-        <View style={styles.card}>
+        <TouchableOpacity style={styles.card}
+        onPress={() => navigate('Surat')}>
             <View style={styles.cardBody}>
                 <View style={styles.bodyContent}>
                     <Text style={styles.titleStyle}>Google Admob</Text>
@@ -45,8 +47,9 @@ export default class SuratKeluar extends Component {
                     <Text style={styles.dateStyle}>21 Oktober</Text>
                 </View>
             </View>
-        </View>
-        <View style={styles.card}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.card}
+        onPress={() => navigate('Surat')}>
             <View style={styles.cardBody}>
                 <View style={styles.bodyContent}>
                     <Text style={styles.titleStyle}>99 Designs</Text>
@@ -56,8 +59,9 @@ export default class SuratKeluar extends Component {
                     <Text style={styles.dateStyle}>16 Oktober</Text>
                 </View>
             </View>
-        </View>
-        <View style={styles.card}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.card}
+        onPress={() => navigate('Surat')}>
             <View style={styles.cardBody}>
                 <View style={styles.bodyContent}>
                     <Text style={styles.titleStyle}>Teepublic</Text>
@@ -67,7 +71,7 @@ export default class SuratKeluar extends Component {
                     <Text style={styles.dateStyle}>3 Oktober</Text>
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
     </View>
     );
   }
